@@ -1,0 +1,23 @@
+@import './utils/vars';
+@import './base/reset';
+@import './base/common';
+@import './utils/hidden';
+@import './utils/placeholders';
+@import './utils/mixins';
+
+// COMPONENTS
+
+@import './components/container';
+@import './components/modalka';
+@import './components/section';
+
+// layout
+
+@import './layout/header';
+@import './layout/hero';
+@import './layout/our_advantages';
+@import './layout/what_we_do';
+@import './layout/our_team';
+@import './layout/clients';
+@import './layout/footer';
+@import './layout/portfolio';

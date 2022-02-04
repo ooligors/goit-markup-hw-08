@@ -1,0 +1,39 @@
+.what-we-do__title,
+.team__title,
+.clients__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(42 / 36);
+  text-align: center;
+}
+.what-we-do {
+  padding-top: 0;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__list {
+    @include position(flex, space-between);
+  }
+  &__overlay {
+    position: absolute;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    padding-top: 27px;
+    padding-bottom: 27px;
+    background: rgba(47, 48, 58, 0.8);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}

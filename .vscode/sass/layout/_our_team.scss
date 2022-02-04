@@ -1,0 +1,72 @@
+.team {
+  background-color: var(--light-background);
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    @include position();
+  }
+  &__card {
+    background-color: var(--white-background);
+    width: 270px;
+    padding-bottom: 30px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  &__card-name {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(19 / 16);
+    text-align: center;
+  }
+  &__card-profession {
+    font-size: 16px;
+    line-height: calc(19 / 16);
+    text-align: center;
+    color: var(--tertiary-color);
+    margin-bottom: 16px;
+  }
+
+  &__card-image {
+    margin-bottom: 30px;
+  }
+}
+
+.social-network {
+  @include position();
+
+  &__link {
+    width: 44px;
+    height: 44px;
+    background-color: var(--white-background);
+    border-radius: 50%;
+    @include position();
+    align-items: center;
+    @extend %transition-background;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+    }
+  }
+
+  &__item + &__item {
+    margin-left: 10px;
+  }
+
+  &__icon {
+    fill: #afb1b8;
+    width: 20px;
+    height: 20px;
+    @extend %transition-fill;
+    .social-network__link:hover &,
+    .social-network__link:focus & {
+      fill: var(--secondary-color);
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.logo {
+  @extend %logo;
+
+  &__span--white {
+    color: var(--secondary-color);
+  }
+}
+
+.footer {
+  background-color: var(--dark-background);
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__join {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    align-items: flex-end;
+  }
+
+  &__contacts {
+    margin-right: 70px;
+  }
+
+  &__connect {
+    margin-right: 93px;
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.address {
+  margin-top: 20px;
+
+  &__list .link {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71;
+    color: var(--secondary-color);
+    @extend %transition;
+
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+.address-mail,
+.address-tel {
+  opacity: 0.6;
+}
+
+.social-icons {
+  display: flex;
+
+  &__link {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    @include position();
+    align-items: center;
+    @extend %transition-background;
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color);
+    }
+  }
+
+  &__item + &__item {
+    margin-left: 10px;
+  }
+}
+
+.social-icon {
+  fill: var(--secondary-color);
+  width: 20px;
+  height: 20px;
+}
+
+.form-subscription__input {
+  display: inline-flex;
+  align-items: center;
+  width: 358px;
+  background: var(--dark-background);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 12px;
+}
+.subscription-btn {
+  background: var(--accent-color);
+  width: 200px;
+  height: 50px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: var(--secondary-color);
+  text-align: center;
+  letter-spacing: 0.06em;
+  line-height: 1.87;
+  font-size: 16px;
+  font-weight: 700;
+  padding-right: 28px;
+  padding-left: 29px;
+  // display: inline-flex;
+  align-items: center;
+  // justify-content: space-between;
+  @include position(inline-flex, space-between);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
