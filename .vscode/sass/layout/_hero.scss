@@ -1,31 +1,69 @@
 .hero {
   background-color: var(--dark-background);
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/hero-img.jpg);
+    url(../images/hero-img-mob-1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   max-width: 1600px;
-  /* height: 600px; */
+
   margin-left: auto;
   margin-right: auto;
 
   text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 118px;
+  padding-bottom: 118px;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/hero-img-mob-2x.jpg);
+  }
+
+  @include tab {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-img-tab-1x.jpg);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(/images/hero-img-tab-2x.jpg);
+    }
+  }
+
+  @include desk {
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(../images/hero-img-desk-1x.jpg);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(/images/hero-img-desk-2x.jpg);
+    }
+  }
 
   &__title {
     margin-bottom: 30px;
     font-style: normal;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+
+    font-size: 26px;
+    line-height: 1.62;
+    max-width: 360px;
+
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--secondary-color);
-    max-width: 696px;
+
     margin-left: auto;
     margin-right: auto;
+
+    @include desk {
+      font-size: 44px;
+      line-height: 1.36;
+      max-width: 696px;
+    }
   }
 }
 

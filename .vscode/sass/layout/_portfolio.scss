@@ -12,13 +12,35 @@
   @include position();
 
   &__btn {
-    margin-bottom: 56px;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 40px;
+    margin-bottom: 25px;
+    @include tab {
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    @include desk {
+      margin-bottom: 50px;
+      justify-content: center;
+    }
   }
 
   &-wrap {
     flex-wrap: wrap;
+    @include tab {
+      flex-basis: calc((100% - 2 * 30px) / 2);
+      justify-content: space-between;
+      margin: -15px;
+
+      // max-width: 354px;
+    }
+    @include desk {
+      flex-basis: calc((100% - 3 * 30px) / 3);
+    }
   }
   &__title {
+    white-space: nowrap;
     color: var(--primary-color);
     font-weight: 700;
     font-size: 18px;
@@ -26,6 +48,7 @@
     letter-spacing: 0.06em;
     margin-bottom: 4px;
   }
+
   &__aftertitle {
     font-weight: 400;
     font-size: 16px;
@@ -61,13 +84,18 @@
   }
 
   &__card {
-    flex-basis: calc(100% / 3 - 30px);
-
-    &:not(:nth-child(3n + 3)) {
-      margin-right: 30px;
+    @include tab {
+      margin: 15px;
+      max-width: 354px;
     }
-    &:not(:nth-last-child(-n + 3)) {
-      margin-bottom: 30px;
+    @include desk {
+      margin: 15px;
+
+      // &:not(:nth-child(3n + 3)) {
+      //   margin-right: 30px;
+      // }
+      // &:not(:nth-last-child(-n + 3)) {
+      //   margin-bottom: 30px;
     }
   }
 
@@ -80,11 +108,15 @@
   }
 
   &__project {
+    max-width: 354px;
     width: 100%;
     height: 100%;
   }
 
   &__text {
+    @include tab {
+      max-width: 354px;
+    }
     background-color: rgba(33, 150, 243, 0.9);
     position: absolute;
     left: 0;
@@ -104,16 +136,22 @@
       transform: translateY(0);
     }
   }
-}
+  &__item {
+    margin-bottom: 15px;
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
 
-.portfolio__item:not(:last-child) {
-  margin-right: 8px;
-}
-
-.proekt-name {
-  padding: 20px 24px;
-  background: var(--white-background);
-  border-bottom: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  .proekt-name {
+    @include tab {
+      max-width: 354px;
+    }
+    max-width: 354px;
+    padding: 20px 24px;
+    background: var(--white-background);
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+  }
 }

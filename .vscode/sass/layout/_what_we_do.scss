@@ -7,19 +7,29 @@
   text-align: center;
 }
 .what-we-do {
+  &__img {
+    width: 100%;
+  }
+  margin: -15px;
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
   padding-top: 0;
   &__title {
     margin-bottom: 50px;
   }
   &__item {
     position: relative;
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
+    // &:not(:last-child) {
+    //   margin-right: 30px;
+    // }
+    margin: 15px;
+    flex-basis: calc((100% - 3 * 30px) / 3);
   }
 
   &__list {
     @include position(flex, space-between);
+    flex-wrap: wrap;
   }
   &__overlay {
     position: absolute;

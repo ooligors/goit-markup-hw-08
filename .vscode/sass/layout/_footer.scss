@@ -19,17 +19,57 @@
   }
 
   &__contacts {
-    margin-right: 70px;
+    margin-bottom: 60px;
+    @include tab {
+      margin-bottom: -60px;
+    }
+
+    @media screen and(max-width:1199px) {
+      text-align: center;
+    }
+    @include desk {
+      margin-right: 70px;
+    }
   }
 
   &__connect {
-    margin-right: 93px;
+    margin-bottom: 60px;
+    text-align: center;
+    // @media screen and(max-width:767px) {
+    //   margin-bottom: 60px;
+    // }
+    @include tab {
+      margin-bottom: 0;
+    }
+
+    // @media screen and (max-width:1199px) {
+    //   text-align: center;
+    // }
+
+    @include desk {
+      margin-right: 93px;
+    }
   }
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-direction: column;
+  // @media screen and (max-width: 767px) {
+  //   flex-direction: column;
+  // }
+  align-items: center;
+
+  @include tab {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  @include desk {
+    align-items: baseline;
+  }
 }
 
 .address {
@@ -84,11 +124,22 @@
   width: 20px;
   height: 20px;
 }
+.form-subscription {
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tab {
+      margin-top: 102px;
+    }
+  }
+}
 
 .form-subscription__input {
   display: inline-flex;
   align-items: center;
-  width: 358px;
+  width: calc(100vw - 30px);
+
   background: var(--dark-background);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -98,7 +149,14 @@
   padding-bottom: 15px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
-  margin-right: 12px;
+  margin-bottom: 20px;
+  @include tab {
+    width: calc(67vw - 30px);
+  }
+  @include desk {
+    margin-right: 12px;
+    width: 358px;
+  }
 }
 .subscription-btn {
   background: var(--accent-color);
@@ -113,9 +171,9 @@
   font-weight: 700;
   padding-right: 28px;
   padding-left: 29px;
-  // display: inline-flex;
+
   align-items: center;
-  // justify-content: space-between;
+
   @include position(inline-flex, space-between);
   box-sizing: border-box;
   border-radius: 4px;

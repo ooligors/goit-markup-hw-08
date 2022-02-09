@@ -1,16 +1,37 @@
 .clients {
   &__title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    @include desk {
+      margin-bottom: 50px;
+    }
   }
 }
 .clients-box {
+  margin: -15px;
   @include position();
-  &__item + &__item {
-    margin-left: 30px;
-  }
+  flex-wrap: wrap;
+  &__item {
+    flex-basis: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+    // max-width: 210px;
 
+    @include tab {
+      flex-basis: calc((100% - 3 * 30px) / 3);
+      margin: 15px;
+      // max-width: 210px;
+    }
+    @include desk {
+      flex-basis: calc((100% - 6 * 30px) / 6);
+      margin: 15px;
+      // max-width: 210px;
+    }
+    // & + & {
+    //   margin-left: 30px;
+    // }
+  }
   &__link {
-    width: 170px;
+    // width: 170px;
+    width: 100%;
     height: 92px;
     background-color: var(--white-background);
     border: 1px solid #afb1b8;
@@ -18,8 +39,6 @@
     align-items: center;
     border-radius: 4px;
     @extend %transition-border;
-
-    // @include (border);
 
     &:focus,
     &:hover {

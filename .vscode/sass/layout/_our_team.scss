@@ -1,21 +1,58 @@
 .team {
   background-color: var(--light-background);
   &__title {
-    margin-bottom: 50px;
+    font-size: 28px;
+    line-height: calc(33 / 28);
+    margin-bottom: 30px;
+    @include desk {
+      font-size: 36px;
+      line-height: calc(42 / 36);
+      margin-bottom: 50px;
+    }
   }
   &__list {
-    @include position();
+    @include tab {
+      @include position();
+      flex-wrap: wrap;
+      @include tab {
+        margin: -15px;
+      }
+    }
   }
   &__card {
+    width: calc(100% - 30px);
+    margin: 15px;
+
+    // @media screen and (max-width: 767px) {
+    //   &:not(last-child) {
+    //     margin-bottom: 30px;
+    //   }
+    // }
+    // @media screen and (max-width: 1199px) and (min-width: 768px) {
+    //   &:nth-child(odd) {
+    //     margin-right: 30px;
+    //   }
+    //   &:not(:nth-last-child(-n + 2)) {
+    //     margin-bottom: 30px;
+    //   }
+    // }
+
     background-color: var(--white-background);
-    width: 270px;
-    padding-bottom: 30px;
+    // max-width: 450px;
+    padding-bottom: 24px;
+    @include tab {
+      flex-basis: calc((100% - 2 * 30px) / 2);
+
+      // max-width: 354px;
+    }
+    @include desk {
+      flex-basis: calc((100% - 4 * 30px) / 4);
+      padding-bottom: 30px;
+      max-width: 270px;
+    }
+
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
-
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
   }
   &__card-name {
     margin-bottom: 10px;
@@ -33,6 +70,7 @@
   }
 
   &__card-image {
+    width: 100%;
     margin-bottom: 30px;
   }
 }
@@ -54,11 +92,13 @@
       background-color: var(--accent-color);
     }
   }
-
-  &__item + &__item {
-    margin-left: 10px;
+  &__item {
+    & + & {
+      @include desk {
+        margin-left: 10px;
+      }
+    }
   }
-
   &__icon {
     fill: #afb1b8;
     width: 20px;

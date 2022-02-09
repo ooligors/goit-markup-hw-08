@@ -37,9 +37,7 @@
             <li class="header__item">
               <a class="header__link link" href="./portfolio.html">Портфолио</a>
             </li>
-            <li class="header__item">
-              <a class="header__link link" href="/"> Контакты </a>
-            </li>
+            <li class="header__item"><a class="header__link link" href="/"> Контакты </a></li>
           </ul>
         </nav>
         <ul class="header__list list header__list--contacts">
@@ -61,6 +59,66 @@
             </a>
           </li>
         </ul>
+        <button type="button" class="menu-burger-btn" data-menu-open>
+          <svg class="menu-burger-btn__icon">
+            <use href="./images/icons.svg#icon-menu_burger"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mob-menu is-hidden" data-menu>
+        <div class="container-mob-menu">
+          <button type="button" class="mob-menu__close-btn" data-menu-close>
+            <svg class="mob-menu__icon-close">
+              <use href="./images/icons.svg#icon-menu_close"></use>
+            </svg>
+          </button>
+
+          <div class="menu-top">
+            <ul class="menu__list list">
+              <li class="menu__item">
+                <a class="menu__link link" href="./index.html">Студия</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="/"> Контакты </a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-both">
+            <div class="menu-bottom">
+              <ul class="menu__list list menu__list--contacts">
+                <li class="menu__item">
+                  <a class="menu__link--tel link" href="tel:+380961111111"> +38 096 111 11 11 </a>
+                </li>
+
+                <li class="menu__item">
+                  <a class="menu__link--mail link" href="mailto:info@devstudio.com">
+                    info@devstudio.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="menu-socseti list">
+              <li class="menu-socseti__item">
+                <a class="menu-socseti__link link" href="www.Instagram.com"> Instagram </a>
+              </li>
+              <li class="menu-socseti__item">
+                <a class="menu-socseti__link link" href="www.Twitter.com"> Twitter </a>
+              </li>
+              <li class="menu-socseti__item">
+                <a class="menu-socseti__link link" href="www.Facebook.com"> Facebook </a>
+              </li>
+
+              <li class="menu-socseti__item">
+                <a class="menu-socseti__link link" href="www.LinkedIn.com"> LinkedIn </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -113,6 +171,7 @@
           <ul class="what-we-do__list list">
             <li class="what-we-do__item">
               <img
+                class="what-we-do__img"
                 src="./images/01.jpg"
                 alt="крупный план-изображение-программист-рабочий-его-стол-офис"
                 width="370"
@@ -122,6 +181,7 @@
             </li>
             <li class="what-we-do__item">
               <img
+                class="what-we-do__img"
                 src="./images/02.jpg"
                 alt="веб-дизайнеры-разработчики-приложений-смартфонов-команда-создатели-рабочий-интерфейс-мобильные-телефоны"
                 width="370"
@@ -131,6 +191,7 @@
             </li>
             <li class="what-we-do__item">
               <img
+                class="what-we-do__img"
                 src="./images/03.jpg"
                 alt="креативный-художник-веб-дизайн с рабочим-цветным-выделением-графическим-планшетом"
                 width="370"
@@ -142,7 +203,7 @@
         </div>
       </section>
 
-      <!----------------------------------- секція наша команда ----------------------------------------------------->
+      <!-- --------------------------------- секція наша команда --------------------------------------------------- -->
       <section class="team section">
         <div class="container">
           <h2 class="team__title">Наша команда</h2>
@@ -150,6 +211,7 @@
             <li class="team__card">
               <img
                 class="team__card-image"
+                srcset="./images/igor_demyanenho_1.jpg 1x, ./images/igor_demyanenho_1-desk2x.jpg 2x"
                 src="./images/igor_demyanenho_1.jpg"
                 alt="Дизайнер продуктов_Игорь Демьяненко "
               />
@@ -192,6 +254,7 @@
             <li class="team__card">
               <img
                 class="team__card-image"
+                srcset="./images/olga_repina_2.jpg 1x, ./images/olga_repina_2-desk2x.jpg 2x"
                 src="./images/olga_repina_2.jpg"
                 alt="Фронтенд-девелопер_Ольга Репина"
                 width="270"
@@ -235,6 +298,7 @@
             <li class="team__card">
               <img
                 class="team__card-image"
+                srcset="./images/nikolay_tarasov_3.jpg 1x, ./images/nikolay_tarasov_3-desk2x.jpg 2x"
                 src="./images/nikolay_tarasov_3.jpg"
                 alt="Маркетолог_Николай Тарасов"
                 width="270"
@@ -278,6 +342,7 @@
             <li class="team__card">
               <img
                 class="team__card-image"
+                srcset="./images/mykhail_ermakov_4.jpg 1x, ./images/mykhail_ermakov_4-desk2x.jpg 2x"
                 src="./images/mykhail_ermakov_4.jpg"
                 alt="UI Designer_Михаил Ермаков"
                 width="270"
@@ -434,7 +499,6 @@
           </ul>
         </div>
         <form class="form-subscription">
-          <!-- <fieldset> -->
           <h4 class="form-subscription__title footer__join">Подпишитесь на рассылку</h4>
           <label for="sign-up"></label>
           <input
@@ -451,7 +515,6 @@
             </svg>
           </button>
         </form>
-        <!-- </fieldset> -->
       </div>
     </footer>
 
@@ -521,5 +584,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
