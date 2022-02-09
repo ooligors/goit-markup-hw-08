@@ -639,19 +639,6 @@ img {
   }
 }
 
-.menu-socseti__icon-line {
-  height: 20px;
-  width: 5px;
-  fill: black;
-}
-
-.menu-socseti {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: -10px;
-}
-
 .mob-menu {
   z-index: 1;
   position: fixed;
@@ -718,6 +705,19 @@ img {
   line-height: 1.167;
   letter-spacing: 0.02em;
   color: #757575;
+}
+
+.menu-socseti {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -10px;
+}
+
+.menu-socseti__icon-line {
+  height: 20px;
+  width: 5px;
+  fill: black;
 }
 
 .menu-socseti__link {
