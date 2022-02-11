@@ -14,12 +14,20 @@
     }
     &--contacts {
       margin-left: auto;
-      @media screen and (min-width: 768px) and (max-width: 1199px) {
+      @include tab {
         flex-direction: column;
+
+        .header__item {
+          margin-bottom: 10px;
+        }
       }
-      // @include desk {
-      //   flex-direction: row;
-      // }
+
+      @include desk {
+        flex-direction: row;
+        .header__item {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
@@ -40,7 +48,6 @@
     }
     &--mail {
       @media screen and (min-width: 768px) and (max-width: 1199px) {
-        margin-bottom: 10px;
       }
     }
 
@@ -63,6 +70,14 @@
 
   &__item:not(:last-child) {
     margin-right: 50px;
+  }
+  .header__list--contacts &__item {
+    margin-right: 0;
+    @include desk {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
   }
 
   &__icon {
@@ -205,13 +220,17 @@
 }
 
 .menu__link--tel {
-  font-weight: 500;
   font-size: 34px;
+  font-weight: 500;
+
   line-height: 1.176;
 
   letter-spacing: 0.02em;
 
   color: #2196f3;
+  @media screen and (max-width: 380px) {
+    font-size: 30px;
+  }
 }
 
 .menu__link--mail {
@@ -225,6 +244,7 @@
 
 .menu-socseti {
   display: flex;
+  flex-wrap: wrap;
   margin: -10px;
 
   &__icon-line {

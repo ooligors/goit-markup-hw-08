@@ -131,6 +131,24 @@ img {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
 .container-mob-menu {
   height: 100%;
   width: 100vw;
@@ -484,12 +502,27 @@ img {
   margin-left: auto;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) {
   .header__list--contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .header__list--contacts .header__item {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__list--contacts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header__list--contacts .header__item {
+    margin-bottom: 0;
   }
 }
 
@@ -505,12 +538,6 @@ img {
 
 .header__link:active, .header__link:focus, .header__link:hover {
   color: var(--accent-color);
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .header__link--mail {
-    margin-bottom: 10px;
-  }
 }
 
 .header__link--mail, .header__link--tel {
@@ -532,6 +559,16 @@ img {
 
 .header__item:not(:last-child) {
   margin-right: 50px;
+}
+
+.header__list--contacts .header__item {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__list--contacts .header__item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .header__icon {
@@ -692,11 +729,17 @@ img {
 }
 
 .menu__link--tel {
-  font-weight: 500;
   font-size: 34px;
+  font-weight: 500;
   line-height: 1.176;
   letter-spacing: 0.02em;
   color: #2196f3;
+}
+
+@media screen and (max-width: 380px) {
+  .menu__link--tel {
+    font-size: 30px;
+  }
 }
 
 .menu__link--mail {
@@ -711,6 +754,8 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: -10px;
 }
 
@@ -743,7 +788,6 @@ img {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-img-mob-1x.jpg);
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-img-mob-1x.jpg);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   max-width: 1600px;
   margin-left: auto;
